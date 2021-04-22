@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43D28D98206984890089D719 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D28D97206984890089D719 /* PlacesTableViewController.swift */; };
+		5DAF113D20690B0300E625F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DAF113720690B0300E625F5 /* LaunchScreen.storyboard */; };
+		5DAF113E20690B0300E625F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DAF113820690B0300E625F5 /* Assets.xcassets */; };
+		5DAF113F20690B0300E625F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DAF113920690B0300E625F5 /* Main.storyboard */; };
+		5DAF114020690B0300E625F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAF113B20690B0300E625F5 /* AppDelegate.swift */; };
+		5DF46426206A942100157A06 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF46425206A942100157A06 /* MapViewController.swift */; };
+		5DF46428206A96E200157A06 /* LocationsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF46427206A96E200157A06 /* LocationsStorage.swift */; };
+		5DF4642A206A979A00157A06 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF46429206A979A00157A06 /* Location.swift */; };
+		958C22DB84668AB46F5AAA87 /* Pods_SafeTracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247309041F5C9FA63D1127FD /* Pods_SafeTracking.framework */; };
+		A4509C572434CDFC00ABF363 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4509C562434CDFC00ABF363 /* GoogleService-Info.plist */; };
+		A4509C592434D54B00ABF363 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4509C582434D54B00ABF363 /* GoogleService-Info.plist */; };
+		A4700664243C7BB500C97BA7 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4700663243C7BB500C97BA7 /* FeedbackViewController.swift */; };
+		A4700667243C809300C97BA7 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4700665243C809200C97BA7 /* PlaceholderTextView.swift */; };
+		A4700668243C809300C97BA7 /* LMDFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4700666243C809200C97BA7 /* LMDFloatingLabelTextField.swift */; };
+		A470066A243C811600C97BA7 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4700669243C811600C97BA7 /* Color+Extension.swift */; };
+		A47E4A2324274A2A00090184 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2224274A2A00090184 /* LoginViewController.swift */; };
+		A47E4A3124277CDD00090184 /* InnerKRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2924277CDC00090184 /* InnerKRProgressHUD.swift */; };
+		A47E4A3224277CDD00090184 /* KRProgressHUDIconType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2A24277CDD00090184 /* KRProgressHUDIconType.swift */; };
+		A47E4A3324277CDD00090184 /* KRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2B24277CDD00090184 /* KRProgressHUD.swift */; };
+		A47E4A3424277CDD00090184 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2C24277CDD00090184 /* Extension.swift */; };
+		A47E4A3524277CDD00090184 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2D24277CDD00090184 /* Extensions.swift */; };
+		A47E4A3624277CDD00090184 /* KRActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2E24277CDD00090184 /* KRActivityIndicatorView.swift */; };
+		A47E4A3724277CDD00090184 /* KRActivityIndicatorViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A2F24277CDD00090184 /* KRActivityIndicatorViewStyle.swift */; };
+		A47E4A3824277CDD00090184 /* KRProgressHUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A3024277CDD00090184 /* KRProgressHUDViewController.swift */; };
+		A47E4A3A24277D5600090184 /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A3924277D5600090184 /* UIViewController+Utility.swift */; };
+		A47E4A4024287D8900090184 /* CardActionFiamDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A3F24287D8800090184 /* CardActionFiamDelegate.swift */; };
+		A47E4A432428AE5C00090184 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A422428AE5C00090184 /* Covid.swift */; };
+		A47E4A452428EA5B00090184 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E4A442428EA5B00090184 /* Manager.swift */; };
+		A48AADCD2431B33E005D4147 /* NSLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48AADCC2431B33E005D4147 /* NSLayoutHelper.swift */; };
+		A48AADCF2431B475005D4147 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48AADCE2431B475005D4147 /* DeviceHelper.swift */; };
+		A4C5468B2437608B00918E38 /* Route.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A4C5468A2437608B00918E38 /* Route.gpx */; };
+		A4DCBD76243070A8003CFD14 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCBD75243070A8003CFD14 /* Dashboard.swift */; };
+		A4DCBD782430AB15003CFD14 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCBD772430AB15003CFD14 /* LocationManager.swift */; };
+		A4DCBD7A2430AE10003CFD14 /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCBD792430AE10003CFD14 /* LocationDelegate.swift */; };
+		A4DCBD7C2430AE52003CFD14 /* GPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCBD7B2430AE52003CFD14 /* GPSPosition.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		247309041F5C9FA63D1127FD /* Pods_SafeTracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B63249FF5C327ABF3739B1D /* Pods-Journal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journal.debug.xcconfig"; path = "Target Support Files/Pods-Journal/Pods-Journal.debug.xcconfig"; sourceTree = "<group>"; };
+		43D28D97206984890089D719 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
+		47A4E4662352CD70F58B05C6 /* Pods-SafeTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeTracking.debug.xcconfig"; path = "Target Support Files/Pods-SafeTracking/Pods-SafeTracking.debug.xcconfig"; sourceTree = "<group>"; };
+		491894B56E3E192911A3F4F3 /* Pods-SafeTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeTracking.release.xcconfig"; path = "Target Support Files/Pods-SafeTracking/Pods-SafeTracking.release.xcconfig"; sourceTree = "<group>"; };
+		5DAF113720690B0300E625F5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DAF113820690B0300E625F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DAF113A20690B0300E625F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DAF113B20690B0300E625F5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5DAF113C20690B0300E625F5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DF46425206A942100157A06 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5DF46427206A96E200157A06 /* LocationsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStorage.swift; sourceTree = "<group>"; };
+		5DF46429206A979A00157A06 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A4509C562434CDFC00ABF363 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A4509C582434D54B00ABF363 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A4700663243C7BB500C97BA7 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		A4700665243C809200C97BA7 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		A4700666243C809200C97BA7 /* LMDFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMDFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		A4700669243C811600C97BA7 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Color+Extension.swift"; path = "SafeTracking/Helper/Color+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A47E4A2224274A2A00090184 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A47E4A2924277CDC00090184 /* InnerKRProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerKRProgressHUD.swift; sourceTree = "<group>"; };
+		A47E4A2A24277CDD00090184 /* KRProgressHUDIconType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRProgressHUDIconType.swift; sourceTree = "<group>"; };
+		A47E4A2B24277CDD00090184 /* KRProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRProgressHUD.swift; sourceTree = "<group>"; };
+		A47E4A2C24277CDD00090184 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A47E4A2D24277CDD00090184 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A47E4A2E24277CDD00090184 /* KRActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRActivityIndicatorView.swift; sourceTree = "<group>"; };
+		A47E4A2F24277CDD00090184 /* KRActivityIndicatorViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRActivityIndicatorViewStyle.swift; sourceTree = "<group>"; };
+		A47E4A3024277CDD00090184 /* KRProgressHUDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRProgressHUDViewController.swift; sourceTree = "<group>"; };
+		A47E4A3924277D5600090184 /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
+		A47E4A3F24287D8800090184 /* CardActionFiamDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardActionFiamDelegate.swift; sourceTree = "<group>"; };
+		A47E4A422428AE5C00090184 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
+		A47E4A442428EA5B00090184 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		A48AADCC2431B33E005D4147 /* NSLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutHelper.swift; sourceTree = "<group>"; };
+		A48AADCE2431B475005D4147 /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		A4C5468924375F2400918E38 /* SafeTracking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeTracking.entitlements; sourceTree = "<group>"; };
+		A4C5468A2437608B00918E38 /* Route.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Route.gpx; sourceTree = "<group>"; };
+		A4DCBD75243070A8003CFD14 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		A4DCBD772430AB15003CFD14 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A4DCBD792430AE10003CFD14 /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
+		A4DCBD7B2430AE52003CFD14 /* GPSPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSPosition.swift; sourceTree = "<group>"; };
+		D2A5F2001F4A9144005CD714 /* SelfTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8864DCE0A38C040DA194707 /* Pods-Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journal.release.xcconfig"; path = "Target Support Files/Pods-Journal/Pods-Journal.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2A5F1FD1F4A9144005CD714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958C22DB84668AB46F5AAA87 /* Pods_SafeTracking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DAF113620690B0300E625F5 /* SafeTracking */ = {
+			isa = PBXGroup;
+			children = (
+				A47C3E69243305F800D2FDDA /* Model */,
+				A47C3E6A2433060900D2FDDA /* Storyboards */,
+				A47E4A412428A2C900090184 /* Helper */,
+				A47E4A2224274A2A00090184 /* LoginViewController.swift */,
+				A4DCBD75243070A8003CFD14 /* Dashboard.swift */,
+				43D28D97206984890089D719 /* PlacesTableViewController.swift */,
+				5DF46425206A942100157A06 /* MapViewController.swift */,
+				A4700663243C7BB500C97BA7 /* FeedbackViewController.swift */,
+				5DAF113B20690B0300E625F5 /* AppDelegate.swift */,
+				5DAF113820690B0300E625F5 /* Assets.xcassets */,
+				A4C5468A2437608B00918E38 /* Route.gpx */,
+				A4C5468924375F2400918E38 /* SafeTracking.entitlements */,
+				5DAF113C20690B0300E625F5 /* Info.plist */,
+			);
+			path = SafeTracking;
+			sourceTree = "<group>";
+		};
+		A47C3E69243305F800D2FDDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A47E4A442428EA5B00090184 /* Manager.swift */,
+				A47E4A422428AE5C00090184 /* Covid.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A47C3E6A2433060900D2FDDA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5DAF113920690B0300E625F5 /* Main.storyboard */,
+				5DAF113720690B0300E625F5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A47E4A2824277CC300090184 /* KrProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A47E4A2C24277CDD00090184 /* Extension.swift */,
+				A47E4A2D24277CDD00090184 /* Extensions.swift */,
+				A47E4A2924277CDC00090184 /* InnerKRProgressHUD.swift */,
+				A47E4A2E24277CDD00090184 /* KRActivityIndicatorView.swift */,
+				A47E4A2F24277CDD00090184 /* KRActivityIndicatorViewStyle.swift */,
+				A47E4A2B24277CDD00090184 /* KRProgressHUD.swift */,
+				A47E4A2A24277CDD00090184 /* KRProgressHUDIconType.swift */,
+				A47E4A3024277CDD00090184 /* KRProgressHUDViewController.swift */,
+			);
+			path = KrProgressHUD;
+			sourceTree = "<group>";
+		};
+		A47E4A412428A2C900090184 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A47E4A2824277CC300090184 /* KrProgressHUD */,
+				A4700669243C811600C97BA7 /* Color+Extension.swift */,
+				5DF46429206A979A00157A06 /* Location.swift */,
+				5DF46427206A96E200157A06 /* LocationsStorage.swift */,
+				A4509C582434D54B00ABF363 /* GoogleService-Info.plist */,
+				A4DCBD772430AB15003CFD14 /* LocationManager.swift */,
+				A48AADCC2431B33E005D4147 /* NSLayoutHelper.swift */,
+				A48AADCE2431B475005D4147 /* DeviceHelper.swift */,
+				A4DCBD792430AE10003CFD14 /* LocationDelegate.swift */,
+				A4DCBD7B2430AE52003CFD14 /* GPSPosition.swift */,
+				A4509C562434CDFC00ABF363 /* GoogleService-Info.plist */,
+				A47E4A3924277D5600090184 /* UIViewController+Utility.swift */,
+				A4700666243C809200C97BA7 /* LMDFloatingLabelTextField.swift */,
+				A4700665243C809200C97BA7 /* PlaceholderTextView.swift */,
+				A47E4A3F24287D8800090184 /* CardActionFiamDelegate.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C6CD11693FC6313BC8491BD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B63249FF5C327ABF3739B1D /* Pods-Journal.debug.xcconfig */,
+				E8864DCE0A38C040DA194707 /* Pods-Journal.release.xcconfig */,
+				47A4E4662352CD70F58B05C6 /* Pods-SafeTracking.debug.xcconfig */,
+				491894B56E3E192911A3F4F3 /* Pods-SafeTracking.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D0CE445FF5ACC3FC9CD14149 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				247309041F5C9FA63D1127FD /* Pods_SafeTracking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2A5F1F71F4A9143005CD714 = {
+			isa = PBXGroup;
+			children = (
+				5DAF113620690B0300E625F5 /* SafeTracking */,
+				D2A5F2011F4A9144005CD714 /* Products */,
+				C6CD11693FC6313BC8491BD8 /* Pods */,
+				D0CE445FF5ACC3FC9CD14149 /* Frameworks */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		D2A5F2011F4A9144005CD714 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2A5F2001F4A9144005CD714 /* SelfTracking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2A5F1FF1F4A9144005CD714 /* SafeTracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2A5F2121F4A9144005CD714 /* Build configuration list for PBXNativeTarget "SafeTracking" */;
+			buildPhases = (
+				19089A9CA7EB7B80E099EA37 /* [CP] Check Pods Manifest.lock */,
+				D2A5F1FC1F4A9144005CD714 /* Sources */,
+				D2A5F1FD1F4A9144005CD714 /* Frameworks */,
+				D2A5F1FE1F4A9144005CD714 /* Resources */,
+				98AF2BF921EE5338CB680B44 /* [CP] Embed Pods Frameworks */,
+				EA9E1AB98790FA9AE6705BDD /* [CP] Copy Pods Resources */,
+				A46EB7432434B55100E90986 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SafeTracking;
+			packageProductDependencies = (
+			);
+			productName = MyRWTutorial;
+			productReference = D2A5F2001F4A9144005CD714 /* SelfTracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2A5F1F81F4A9143005CD714 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = DrillMaps;
+				TargetAttributes = {
+					D2A5F1FF1F4A9144005CD714 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = D2A5F1FB1F4A9143005CD714 /* Build configuration list for PBXProject "SafeTracking" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2A5F1F71F4A9143005CD714;
+			packageReferences = (
+			);
+			productRefGroup = D2A5F2011F4A9144005CD714 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2A5F1FF1F4A9144005CD714 /* SafeTracking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2A5F1FE1F4A9144005CD714 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DAF113F20690B0300E625F5 /* Main.storyboard in Resources */,
+				A4C5468B2437608B00918E38 /* Route.gpx in Resources */,
+				A4509C572434CDFC00ABF363 /* GoogleService-Info.plist in Resources */,
+				5DAF113E20690B0300E625F5 /* Assets.xcassets in Resources */,
+				5DAF113D20690B0300E625F5 /* LaunchScreen.storyboard in Resources */,
+				A4509C592434D54B00ABF363 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19089A9CA7EB7B80E099EA37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeTracking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98AF2BF921EE5338CB680B44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeTracking/Pods-SafeTracking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeTracking/Pods-SafeTracking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafeTracking/Pods-SafeTracking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A46EB7432434B55100E90986 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		EA9E1AB98790FA9AE6705BDD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeTracking/Pods-SafeTracking-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeTracking/Pods-SafeTracking-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafeTracking/Pods-SafeTracking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2A5F1FC1F4A9144005CD714 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A48AADCD2431B33E005D4147 /* NSLayoutHelper.swift in Sources */,
+				A47E4A2324274A2A00090184 /* LoginViewController.swift in Sources */,
+				A4DCBD7C2430AE52003CFD14 /* GPSPosition.swift in Sources */,
+				A4700664243C7BB500C97BA7 /* FeedbackViewController.swift in Sources */,
+				A47E4A3724277CDD00090184 /* KRActivityIndicatorViewStyle.swift in Sources */,
+				A47E4A3124277CDD00090184 /* InnerKRProgressHUD.swift in Sources */,
+				A47E4A3624277CDD00090184 /* KRActivityIndicatorView.swift in Sources */,
+				5DAF114020690B0300E625F5 /* AppDelegate.swift in Sources */,
+				A4700668243C809300C97BA7 /* LMDFloatingLabelTextField.swift in Sources */,
+				5DF46426206A942100157A06 /* MapViewController.swift in Sources */,
+				A47E4A432428AE5C00090184 /* Covid.swift in Sources */,
+				A4DCBD7A2430AE10003CFD14 /* LocationDelegate.swift in Sources */,
+				A4700667243C809300C97BA7 /* PlaceholderTextView.swift in Sources */,
+				A47E4A4024287D8900090184 /* CardActionFiamDelegate.swift in Sources */,
+				A47E4A3224277CDD00090184 /* KRProgressHUDIconType.swift in Sources */,
+				A470066A243C811600C97BA7 /* Color+Extension.swift in Sources */,
+				A4DCBD76243070A8003CFD14 /* Dashboard.swift in Sources */,
+				A48AADCF2431B475005D4147 /* DeviceHelper.swift in Sources */,
+				A47E4A3424277CDD00090184 /* Extension.swift in Sources */,
+				A47E4A3824277CDD00090184 /* KRProgressHUDViewController.swift in Sources */,
+				A4DCBD782430AB15003CFD14 /* LocationManager.swift in Sources */,
+				5DF4642A206A979A00157A06 /* Location.swift in Sources */,
+				5DF46428206A96E200157A06 /* LocationsStorage.swift in Sources */,
+				43D28D98206984890089D719 /* PlacesTableViewController.swift in Sources */,
+				A47E4A452428EA5B00090184 /* Manager.swift in Sources */,
+				A47E4A3524277CDD00090184 /* Extensions.swift in Sources */,
+				A47E4A3324277CDD00090184 /* KRProgressHUD.swift in Sources */,
+				A47E4A3A24277D5600090184 /* UIViewController+Utility.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5DAF113920690B0300E625F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DAF113A20690B0300E625F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2A5F2101F4A9144005CD714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D2A5F2111F4A9144005CD714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2A5F2131F4A9144005CD714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47A4E4662352CD70F58B05C6 /* Pods-SafeTracking.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SafeTracking/SafeTracking.entitlements;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = DJQS9YSS64;
+				INFOPLIST_FILE = "$(SRCROOT)/SafeTracking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drillmaps.assetTracking;
+				PRODUCT_NAME = SelfTracking;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D2A5F2141F4A9144005CD714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 491894B56E3E192911A3F4F3 /* Pods-SafeTracking.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SafeTracking/SafeTracking.entitlements;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = DJQS9YSS64;
+				INFOPLIST_FILE = "$(SRCROOT)/SafeTracking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drillmaps.assetTracking;
+				PRODUCT_NAME = SelfTracking;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2A5F1FB1F4A9143005CD714 /* Build configuration list for PBXProject "SafeTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2A5F2101F4A9144005CD714 /* Debug */,
+				D2A5F2111F4A9144005CD714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2A5F2121F4A9144005CD714 /* Build configuration list for PBXNativeTarget "SafeTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2A5F2131F4A9144005CD714 /* Debug */,
+				D2A5F2141F4A9144005CD714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2A5F1F81F4A9143005CD714 /* Project object */;
+}

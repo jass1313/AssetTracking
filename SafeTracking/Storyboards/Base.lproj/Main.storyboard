@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3co-gI-Kt8">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="c2l-DW-y44">
+            <objects>
+                <viewController id="Yuc-vP-sKp" customClass="MapViewController" customModule="SelfTracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0kc-Vd-p9E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqj-62-hnE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HZP-2x-uXz"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rqj-62-hnE" firstAttribute="top" secondItem="0kc-Vd-p9E" secondAttribute="top" id="0mi-g5-HbG"/>
+                            <constraint firstAttribute="bottom" secondItem="rqj-62-hnE" secondAttribute="bottom" id="ER7-XR-Lv7"/>
+                            <constraint firstItem="rqj-62-hnE" firstAttribute="leading" secondItem="HZP-2x-uXz" secondAttribute="leading" id="dZo-CL-dZR"/>
+                            <constraint firstItem="rqj-62-hnE" firstAttribute="trailing" secondItem="HZP-2x-uXz" secondAttribute="trailing" id="xUV-5f-aiG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="782-Zl-f3R">
+                        <barButtonItem key="rightBarButtonItem" title="Add Visit" id="8hs-4L-RIb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addItemPressed:" destination="Yuc-vP-sKp" id="kRO-4v-NV3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="rqj-62-hnE" id="Qsc-xF-mZf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eeg-KA-uAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507" y="406"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="rtz-no-d4Y">
+            <objects>
+                <tabBarController storyboardIdentifier="tabbar" id="fLs-Ce-58R" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WBO-9v-Owa"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" backgroundImage="color-primary 3 copy 5" id="aBS-v8-3um">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jpi-xH-Iiy" kind="relationship" relationship="viewControllers" id="AvP-rz-1sa"/>
+                        <segue destination="ISR-aY-LXU" kind="relationship" relationship="viewControllers" id="G5m-MP-rUI"/>
+                        <segue destination="Udf-8T-ACp" kind="relationship" relationship="viewControllers" id="rb9-h8-YeV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lA-9a-V3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-107" y="31"/>
+        </scene>
+        <!--Places-->
+        <scene sceneID="qu5-pi-pZ2">
+            <objects>
+                <tableViewController title="Places" id="kdG-ig-q87" customClass="PlacesTableViewController" customModule="SelfTracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YNf-kX-tv4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.29411764709999999" green="0.37254901959999998" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceCell" textLabel="A58-kq-gqU" detailTextLabel="0Bs-Cr-osv" style="IBUITableViewCellStyleSubtitle" id="e7N-x8-OkW">
+                                <rect key="frame" x="0.0" y="28" width="414" height="47.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e7N-x8-OkW" id="kPD-Ls-nn8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="47.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A58-kq-gqU">
+                                            <rect key="frame" x="20" y="6.6666666666666661" width="26.333333333333332" height="16.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" systemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Bs-Cr-osv">
+                                            <rect key="frame" x="20" y="25.333333333333329" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" systemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kdG-ig-q87" id="9ya-va-S2a"/>
+                            <outlet property="delegate" destination="kdG-ig-q87" id="S16-o4-x6e"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Place Visited" largeTitleDisplayMode="always" id="wPB-GA-Tna">
+                        <barButtonItem key="rightBarButtonItem" title="Clear " id="FOR-kb-9q4">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="logout:" destination="kdG-ig-q87" id="Gd0-LD-DhN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNb-bU-itS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507.2463768115942" y="-318.08035714285711"/>
+        </scene>
+        <!--Place Visited-->
+        <scene sceneID="BWS-vg-nQM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ISR-aY-LXU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Place Visited" image="Place visited" id="Mlh-Ja-20l"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="uqF-9x-umx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kdG-ig-q87" kind="relationship" relationship="rootViewController" id="lsP-Mc-l8u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSb-h1-y4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668.79999999999995" y="-318.4729064039409"/>
+        </scene>
+        <!--Infected Places-->
+        <scene sceneID="7Mf-04-th5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Udf-8T-ACp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Infected Places" image="Infected area" id="KYt-1Z-hWU">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hG9-0D-hJn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yuc-vP-sKp" kind="relationship" relationship="rootViewController" id="vJw-K5-zUi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMG-Po-jc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="406"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="6Ac-qR-WAJ">
+            <objects>
+                <viewController storyboardIdentifier="loginVC" id="3co-gI-Kt8" customClass="LoginViewController" customModule="SelfTracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yxf-Gp-pfL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAo-Qx-AQf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rnq-B8-nol" customClass="LogoImage" customModule="SelfTracking" customModuleProvider="target">
+                                        <rect key="frame" x="157" y="114" width="100" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="6xb-RC-Jd8"/>
+                                            <constraint firstAttribute="width" constant="100" id="MF3-bK-Uy5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your phone number " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsN-Ie-YAu" customClass="FPNTextField" customModule="FlagPhoneNumber">
+                                        <rect key="frame" x="30" y="385" width="384" height="66"/>
+                                        <color key="backgroundColor" red="0.45490196078431372" green="0.51764705882352935" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="dBa-9y-Rq5" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                        <real key="value" value="45"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                        <real key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Mobile"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRl-0f-Ld2">
+                                        <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="61l-Q2-PWH"/>
+                                        </constraints>
+                                    </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By logging in, you agree to DrillMaps " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugi-Bv-iuW">
+                                        <rect key="frame" x="90" y="842.66666666666663" width="234" height="16.333333333333371"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="-2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ti0-Rs-dQ2">
+                                        <rect key="frame" x="99.333333333333329" y="860" width="215.33333333333337" height="13"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XdQ-cn-X3y" customClass="UIButtonHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="99" height="13"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Terms of Use ">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Terms of Use ">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                                <integer key="NSUnderline" value="1"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="terms:" destination="3co-gI-Kt8" eventType="touchUpInside" id="kLb-TC-o8F"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&amp; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="434-bZ-wxH">
+                                                <rect key="frame" x="99.666666666666671" y="0.0" width="13.666666666666671" height="13"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hf-Pc-25H" customClass="UIButtonHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                <rect key="frame" x="111.33333333333331" y="0.0" width="104" height="13"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Privacy Policy.">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                                <integer key="NSUnderline" value="1"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="privacy:" destination="3co-gI-Kt8" eventType="touchUpInside" id="hyT-y5-iwz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.55000000000000004"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="13" id="kYA-cl-JjV"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G6H-Gh-pD6">
+                                        <rect key="frame" x="57" y="581" width="357" height="315"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="357" id="Jti-el-KNS"/>
+                                            <constraint firstAttribute="height" constant="315" id="lbd-kF-6CW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KId-q5-GUs">
+                                        <rect key="frame" x="30" y="510" width="354" height="52"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="gqn-NM-Oel" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                        <real key="value" value="45"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                        <real key="value" value="35"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" red="0.29411764705882354" green="0.37254901960784315" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authenticateUser:" destination="3co-gI-Kt8" eventType="touchUpInside" id="16O-51-16a"/>
+                                        </connections>
+                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYd-Rc-fMK">
+                                        <rect key="frame" x="0.0" y="385" width="30" height="66"/>
+                                        <color key="backgroundColor" red="0.45490196078431372" green="0.51764705882352935" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlf-1Z-aHC">
+                                        <rect key="frame" x="30" y="450" width="354" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="UUN-YH-b5i"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asset Register" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DXs-Z6-Tra">
+                                        <rect key="frame" x="50" y="294" width="314" height="31"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ugi-Bv-iuW" firstAttribute="centerX" secondItem="0ul-gQ-hB8" secondAttribute="centerX" id="1pG-bv-8LN"/>
+                                    <constraint firstItem="KId-q5-GUs" firstAttribute="leading" secondItem="0ul-gQ-hB8" secondAttribute="leading" constant="30" id="5C8-d2-RVF" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPadPro9_7">
+                                                <real key="value" value="130"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPadPro10_5">
+                                                <real key="value" value="150"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPadPro12_9">
+                                                <real key="value" value="200"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="Rnq-B8-nol" firstAttribute="top" secondItem="JAo-Qx-AQf" secondAttribute="top" constant="114" id="7Uk-ts-MFx" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                                <real key="value" value="60"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="0ul-gQ-hB8" firstAttribute="trailing" secondItem="DXs-Z6-Tra" secondAttribute="trailing" constant="50" id="CoY-2l-k2m"/>
+                                    <constraint firstItem="mYd-Rc-fMK" firstAttribute="top" secondItem="DXs-Z6-Tra" secondAttribute="bottom" constant="60" id="DBv-1Z-2cs"/>
+                                    <constraint firstItem="dsN-Ie-YAu" firstAttribute="leading" secondItem="mYd-Rc-fMK" secondAttribute="trailing" id="GBu-Gt-uO5"/>
+                                    <constraint firstItem="mlf-1Z-aHC" firstAttribute="leading" secondItem="Hu9-Pn-BDb" secondAttribute="leading" constant="30" id="GEg-iG-8bB"/>
+                                    <constraint firstItem="KId-q5-GUs" firstAttribute="top" secondItem="dsN-Ie-YAu" secondAttribute="bottom" constant="59" id="KuC-bF-bKb"/>
+                                    <constraint firstItem="KId-q5-GUs" firstAttribute="top" secondItem="mYd-Rc-fMK" secondAttribute="bottom" constant="59" id="RSX-lx-kHd"/>
+                                    <constraint firstItem="DXs-Z6-Tra" firstAttribute="top" secondItem="Rnq-B8-nol" secondAttribute="bottom" constant="80" id="SGy-K7-M7B" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="0ul-gQ-hB8" firstAttribute="bottom" secondItem="Ti0-Rs-dQ2" secondAttribute="bottom" constant="23" id="Swb-q4-9iF"/>
+                                    <constraint firstItem="tRl-0f-Ld2" firstAttribute="leading" secondItem="Hu9-Pn-BDb" secondAttribute="leading" id="Txt-cp-dbj"/>
+                                    <constraint firstItem="Rnq-B8-nol" firstAttribute="centerX" secondItem="0ul-gQ-hB8" secondAttribute="centerX" id="UXr-75-zbk"/>
+                                    <constraint firstItem="dsN-Ie-YAu" firstAttribute="leading" secondItem="0ul-gQ-hB8" secondAttribute="leading" constant="30" id="UxR-ai-eu0"/>
+                                    <constraint firstItem="tRl-0f-Ld2" firstAttribute="trailing" secondItem="0ul-gQ-hB8" secondAttribute="trailing" id="Zc1-pz-Dvb"/>
+                                    <constraint firstItem="Ti0-Rs-dQ2" firstAttribute="top" secondItem="Ugi-Bv-iuW" secondAttribute="bottom" constant="1" id="ZwX-9Q-OvD"/>
+                                    <constraint firstItem="G6H-Gh-pD6" firstAttribute="trailing" secondItem="0ul-gQ-hB8" secondAttribute="trailing" id="cGs-nw-W7w"/>
+                                    <constraint firstItem="DXs-Z6-Tra" firstAttribute="leading" secondItem="0ul-gQ-hB8" secondAttribute="leading" constant="50" id="e3o-2I-0sU"/>
+                                    <constraint firstItem="mlf-1Z-aHC" firstAttribute="top" secondItem="dsN-Ie-YAu" secondAttribute="bottom" constant="-1" id="fSc-1i-RiM"/>
+                                    <constraint firstItem="tRl-0f-Ld2" firstAttribute="top" secondItem="G6H-Gh-pD6" secondAttribute="bottom" id="l2P-KB-Rlr"/>
+                                    <constraint firstItem="G6H-Gh-pD6" firstAttribute="leading" secondItem="Hu9-Pn-BDb" secondAttribute="leading" constant="57" id="mVn-FE-713"/>
+                                    <constraint firstAttribute="bottom" secondItem="KId-q5-GUs" secondAttribute="bottom" constant="20" id="miV-W9-Ftg"/>
+                                    <constraint firstItem="Ti0-Rs-dQ2" firstAttribute="centerX" secondItem="0ul-gQ-hB8" secondAttribute="centerX" id="ms0-9F-C2k"/>
+                                    <constraint firstItem="0ul-gQ-hB8" firstAttribute="trailing" secondItem="dsN-Ie-YAu" secondAttribute="trailing" id="pYy-bY-Vlb"/>
+                                    <constraint firstItem="mYd-Rc-fMK" firstAttribute="leading" secondItem="0ul-gQ-hB8" secondAttribute="leading" id="q2W-gq-bMM"/>
+                                    <constraint firstItem="0ul-gQ-hB8" firstAttribute="trailing" secondItem="mlf-1Z-aHC" secondAttribute="trailing" constant="30" id="v4m-dY-77F"/>
+                                    <constraint firstItem="tRl-0f-Ld2" firstAttribute="bottom" secondItem="0ul-gQ-hB8" secondAttribute="bottom" id="wQD-jS-hGf"/>
+                                    <constraint firstItem="0ul-gQ-hB8" firstAttribute="trailing" secondItem="KId-q5-GUs" secondAttribute="trailing" constant="30" id="yVf-hh-Mn8" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPadPro9_7">
+                                                <real key="value" value="130"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPadPro10_5">
+                                                <real key="value" value="150"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPadPro12_9">
+                                                <real key="value" value="200"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="dsN-Ie-YAu" firstAttribute="top" secondItem="DXs-Z6-Tra" secondAttribute="bottom" constant="60" id="zVt-qQ-Rgx"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Hu9-Pn-BDb"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="0ul-gQ-hB8"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vuB-Kp-oAL"/>
+                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JAo-Qx-AQf" secondAttribute="bottom" id="o8f-0s-j8c"/>
+                            <constraint firstItem="JAo-Qx-AQf" firstAttribute="leading" secondItem="vuB-Kp-oAL" secondAttribute="leading" id="p3y-FI-O51"/>
+                            <constraint firstItem="JAo-Qx-AQf" firstAttribute="trailing" secondItem="vuB-Kp-oAL" secondAttribute="trailing" id="s3A-Q4-3hF"/>
+                            <constraint firstItem="JAo-Qx-AQf" firstAttribute="top" secondItem="Yxf-Gp-pfL" secondAttribute="top" id="xwb-Lc-FZo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oJV-D5-tzX"/>
+                    <connections>
+                        <outlet property="email" destination="dsN-Ie-YAu" id="aDM-wA-PjK"/>
+                        <outlet property="imageView" destination="Rnq-B8-nol" id="rdV-fr-jbZ"/>
+                        <outlet property="loginButton" destination="KId-q5-GUs" id="SfQ-Lc-rVW"/>
+                        <outlet property="logoView" destination="Rnq-B8-nol" id="3nc-Rx-2Az"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBz-aK-PFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-852.17391304347836" y="30.803571428571427"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="SBU-1D-Hnz">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" id="OUf-Sr-pfY" customClass="Dashboard" customModule="SelfTracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cpZ-rR-425">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1BL-y8-ds3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-4v-R37">
+                                        <rect key="frame" x="46" y="533.66666666666663" width="322" height="52"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="t8S-jV-4gT" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                        <real key="value" value="35"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                        <real key="value" value="45"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted" title="Logout..."/>
+                                        <connections>
+                                            <action selector="logout:" destination="OUf-Sr-pfY" eventType="touchUpInside" id="3D6-ev-gzz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8G-U7-UIc">
+                                        <rect key="frame" x="46" y="389.66666666666669" width="322" height="52"/>
+                                        <color key="backgroundColor" red="0.08235294118" green="0.80000000000000004" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="JFg-Uv-w2X" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                        <real key="value" value="35"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                        <real key="value" value="45"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Start Logs">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontSizeToWidth" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startStopLogs:" destination="OUf-Sr-pfY" eventType="touchUpInside" id="zqo-FI-Iox"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spy-Iq-QgV">
+                                        <rect key="frame" x="46" y="461.66666666666663" width="322" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="lgz-Wi-esx" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                        <real key="value" value="35"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                        <real key="value" value="45"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Are you Infected?">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="affected:" destination="OUf-Sr-pfY" eventType="touchUpInside" id="9Mn-Ku-TkU"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track your moment and stay safe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MwO-jR-qxs">
+                                        <rect key="frame" x="50" y="200" width="314" height="59.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app iconArtboard 1" translatesAutoresizingMaskIntoConstraints="NO" id="FdY-Pm-Bq4">
+                                        <rect key="frame" x="157" y="50" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="6QT-Rm-alh"/>
+                                            <constraint firstAttribute="width" constant="100" id="zPU-R1-Nvg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8K7-4v-R37" firstAttribute="top" secondItem="spy-Iq-QgV" secondAttribute="bottom" constant="20" id="9kX-u1-OKu"/>
+                                    <constraint firstAttribute="bottom" secondItem="8K7-4v-R37" secondAttribute="bottom" constant="20" id="Ai9-AO-ATz"/>
+                                    <constraint firstItem="tfo-Hu-ApJ" firstAttribute="trailing" secondItem="8K7-4v-R37" secondAttribute="trailing" constant="46" id="FOn-e6-B9U"/>
+                                    <constraint firstItem="tfo-Hu-ApJ" firstAttribute="trailing" secondItem="MwO-jR-qxs" secondAttribute="trailing" constant="50" id="OTU-9A-xS7"/>
+                                    <constraint firstItem="MwO-jR-qxs" firstAttribute="leading" secondItem="U9f-Sw-VW7" secondAttribute="leading" constant="50" id="RUo-Uo-O9e"/>
+                                    <constraint firstItem="FdY-Pm-Bq4" firstAttribute="top" secondItem="1BL-y8-ds3" secondAttribute="top" constant="50" id="S0o-KT-fd2" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                                <real key="value" value="70"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="tfo-Hu-ApJ" firstAttribute="trailing" secondItem="spy-Iq-QgV" secondAttribute="trailing" constant="46" id="SxL-E5-2Vj"/>
+                                    <constraint firstItem="MwO-jR-qxs" firstAttribute="centerX" secondItem="tfo-Hu-ApJ" secondAttribute="centerX" constant="-2.5" id="XRK-Jn-UvC"/>
+                                    <constraint firstItem="spy-Iq-QgV" firstAttribute="top" secondItem="n8G-U7-UIc" secondAttribute="bottom" constant="20" id="Z7U-I3-x2c"/>
+                                    <constraint firstItem="n8G-U7-UIc" firstAttribute="top" secondItem="MwO-jR-qxs" secondAttribute="bottom" constant="130" id="cyP-td-eYr" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="spy-Iq-QgV" firstAttribute="leading" secondItem="tfo-Hu-ApJ" secondAttribute="leading" constant="46" id="eaz-ts-xao"/>
+                                    <constraint firstItem="8K7-4v-R37" firstAttribute="leading" secondItem="tfo-Hu-ApJ" secondAttribute="leading" constant="46" id="nTr-Dh-AlP"/>
+                                    <constraint firstItem="tfo-Hu-ApJ" firstAttribute="trailing" secondItem="n8G-U7-UIc" secondAttribute="trailing" constant="46" id="uYN-eO-bQb"/>
+                                    <constraint firstItem="FdY-Pm-Bq4" firstAttribute="centerX" secondItem="tfo-Hu-ApJ" secondAttribute="centerX" id="xeJ-2p-r5Q"/>
+                                    <constraint firstItem="n8G-U7-UIc" firstAttribute="leading" secondItem="tfo-Hu-ApJ" secondAttribute="leading" constant="46" id="yDJ-xw-4qY"/>
+                                    <constraint firstItem="MwO-jR-qxs" firstAttribute="top" secondItem="FdY-Pm-Bq4" secondAttribute="bottom" constant="50" id="zVj-vd-EoF" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="U9f-Sw-VW7"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="tfo-Hu-ApJ"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uay-xX-F9D"/>
+                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Uay-xX-F9D" firstAttribute="bottom" secondItem="1BL-y8-ds3" secondAttribute="bottom" id="UAa-On-mjl"/>
+                            <constraint firstItem="1BL-y8-ds3" firstAttribute="top" secondItem="Uay-xX-F9D" secondAttribute="top" id="VIO-w4-YKW"/>
+                            <constraint firstItem="1BL-y8-ds3" firstAttribute="trailing" secondItem="Uay-xX-F9D" secondAttribute="trailing" id="tf9-ej-VIe"/>
+                            <constraint firstItem="1BL-y8-ds3" firstAttribute="leading" secondItem="Uay-xX-F9D" secondAttribute="leading" id="yhj-zO-kU5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="0v6-sS-u5n">
+                        <barButtonItem key="rightBarButtonItem" image="feedback-24px" style="plain" id="B7F-es-VtD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ba6-5s-eh1">
+                                <rect key="frame" x="319" y="0.0" width="75" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="feedback-24px">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="p3t-TG-Cl4" kind="show" id="Av9-aB-Tz4"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="FdY-Pm-Bq4" id="CIu-WP-e15"/>
+                        <outlet property="infectedBut" destination="spy-Iq-QgV" id="Hh9-J4-NQk"/>
+                        <outlet property="logoutBut" destination="8K7-4v-R37" id="eOQ-e4-4UY"/>
+                        <outlet property="startStopButton" destination="n8G-U7-UIc" id="2o5-hV-tR9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9S-87-puN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666.66666666666674" y="1123.6607142857142"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="w3o-g3-XR9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jpi-xH-Iiy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="ZdV-pu-H5I"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="x1K-xZ-Cko">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OUf-Sr-pfY" kind="relationship" relationship="rootViewController" id="3Zv-9q-raH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cyu-vw-vYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-107" y="1124"/>
+        </scene>
+        <!--Feedback-->
+        <scene sceneID="yJw-ex-7S3">
+            <objects>
+                <tableViewController storyboardIdentifier="Feedback" id="p3t-TG-Cl4" customClass="FeedbackViewController" customModule="SelfTracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="O7u-aZ-6w3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="a9q-nA-aQ8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="87" id="bSo-XB-k0C">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bSo-XB-k0C" id="ern-3P-gVg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please share your feedback." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2R-T5-Nfi">
+                                                    <rect key="frame" x="19" y="14" width="376" height="65.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="X2R-T5-Nfi" secondAttribute="bottom" constant="7.5" id="jLl-Gd-ql9"/>
+                                                <constraint firstItem="X2R-T5-Nfi" firstAttribute="leading" secondItem="ern-3P-gVg" secondAttribute="leading" constant="19" id="pKD-xu-2gP"/>
+                                                <constraint firstItem="X2R-T5-Nfi" firstAttribute="top" secondItem="ern-3P-gVg" secondAttribute="top" constant="14" id="yRs-0R-C2G"/>
+                                                <constraint firstAttribute="trailing" secondItem="X2R-T5-Nfi" secondAttribute="trailing" constant="19" id="zfE-DP-YuT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="73" id="CcU-0f-ZJC">
+                                        <rect key="frame" x="0.0" y="115" width="414" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CcU-0f-ZJC" id="2J7-yd-NaD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8C3-CS-HHb" customClass="LMDFloatingLabelTextField" customModule="SelfTracking" customModuleProvider="target">
+                                                    <rect key="frame" x="19" y="7.9999999999999964" width="376" height="57.666666666666657"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                            <integer key="value" value="0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <integer key="value" value="0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="8C3-CS-HHb" firstAttribute="leading" secondItem="2J7-yd-NaD" secondAttribute="leading" constant="19" id="YTr-tr-Yt4"/>
+                                                <constraint firstItem="8C3-CS-HHb" firstAttribute="top" secondItem="2J7-yd-NaD" secondAttribute="top" constant="8" id="oZb-03-7BR"/>
+                                                <constraint firstAttribute="bottom" secondItem="8C3-CS-HHb" secondAttribute="bottom" constant="7.5" id="svq-aS-2gS"/>
+                                                <constraint firstAttribute="trailing" secondItem="8C3-CS-HHb" secondAttribute="trailing" constant="19" id="vN8-uq-mec"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="223" id="GlC-Ij-U9M">
+                                        <rect key="frame" x="0.0" y="188" width="414" height="223"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GlC-Ij-U9M" id="JoO-Gs-dce">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="223"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-d4-74a" customClass="PlaceholderTextView" customModule="SelfTracking" customModuleProvider="target">
+                                                    <rect key="frame" x="19" y="8" width="376" height="186"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Feedback"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bcb-d4-74a" secondAttribute="trailing" constant="19" id="21s-g8-Uzf"/>
+                                                <constraint firstAttribute="bottom" secondItem="bcb-d4-74a" secondAttribute="bottom" constant="29" id="CGk-gd-t0j"/>
+                                                <constraint firstItem="bcb-d4-74a" firstAttribute="top" secondItem="JoO-Gs-dce" secondAttribute="top" constant="8" id="PDm-Ep-Y1P"/>
+                                                <constraint firstItem="bcb-d4-74a" firstAttribute="leading" secondItem="JoO-Gs-dce" secondAttribute="leading" constant="19" id="vTJ-vo-1RZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="169" id="eGi-ts-iw8">
+                                        <rect key="frame" x="0.0" y="411" width="414" height="169"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="eGi-ts-iw8" id="IAn-5U-tKC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="169"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuD-ai-QqC" customClass="DrillMapsBlueButton" customModule="SelfTracking" customModuleProvider="target">
+                                                    <rect key="frame" x="30" y="110" width="354" height="52"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="52" id="XpJ-jl-5Nh" customClass="NSLayoutHelper" customModule="SelfTracking" customModuleProvider="target">
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
+                                                                    <real key="value" value="35"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                                    <real key="value" value="40"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                                                    <real key="value" value="45"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Submit">
+                                                        <color key="titleColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="submitFeedback" destination="p3t-TG-Cl4" eventType="touchUpInside" id="458-30-L9k"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="HuD-ai-QqC" secondAttribute="trailing" constant="30" id="DMb-Fd-hyp"/>
+                                                <constraint firstItem="HuD-ai-QqC" firstAttribute="top" secondItem="IAn-5U-tKC" secondAttribute="top" constant="110" id="eMn-HW-kwb"/>
+                                                <constraint firstAttribute="bottom" secondItem="HuD-ai-QqC" secondAttribute="bottom" constant="5" id="lk8-5l-GaH"/>
+                                                <constraint firstItem="HuD-ai-QqC" firstAttribute="leading" secondItem="IAn-5U-tKC" secondAttribute="leading" constant="30" id="t9H-Ui-gH5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.30664646629999998" green="0.34708231690000002" blue="0.96868020300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="p3t-TG-Cl4" id="LzO-Dd-Fo7"/>
+                            <outlet property="delegate" destination="p3t-TG-Cl4" id="IjR-8y-dws"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Feedback" largeTitleDisplayMode="always" id="Fax-7T-7O7"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="comments" destination="bcb-d4-74a" id="USP-PF-Evf"/>
+                        <outlet property="subject" destination="8C3-CS-HHb" id="8im-NK-kKM"/>
+                        <outlet property="submitButton" destination="HuD-ai-QqC" id="b9Z-bN-31k"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2MC-3i-tuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1506" y="1124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Infected area" width="27" height="27"/>
+        <image name="Place visited" width="27" height="27"/>
+        <image name="app iconArtboard 1" width="1080" height="1080"/>
+        <image name="color-primary 3 copy 5" width="375" height="819"/>
+        <image name="dashboard" width="27" height="27"/>
+        <image name="feedback-24px" width="24" height="24"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

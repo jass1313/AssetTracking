@@ -33,7 +33,6 @@ class MapViewController: UIViewController,MKMapViewDelegate {
   @objc func updateData() {
     let annotations = Manager.shared.allCovidData.map { annotationForLocation($0) }
       mapView.addAnnotations(annotations)
-    
   }
   
   func annotationForLocation(_ location: Covid) -> MKAnnotation {
@@ -50,7 +49,6 @@ class MapViewController: UIViewController,MKMapViewDelegate {
       return
     }
     LocationsStorage.shared.saveCLLocationToDisk(currentLocation)
-    Manager.shared.saveDrill() { (err, ref) in}
   }
   
   func checkInternet() {

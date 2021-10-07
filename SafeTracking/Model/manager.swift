@@ -59,6 +59,8 @@ class Manager: NSObject {
         
         uploadValues["createdAt"] = lastLocationUpdate.date.timeIntervalSince1970
         uploadValues["address"] = lastLocationUpdate.description
+        uploadValues["lat"] = lastLocationUpdate.latitude
+        uploadValues["lng"] = lastLocationUpdate.longitude
         
         ref.updateChildValues(uploadValues)
         
@@ -90,10 +92,12 @@ class Manager: NSObject {
         
         uploadValues["createdAt"] = coord.date.timeIntervalSince1970
         uploadValues["address"] = coord.description
+        uploadValues["lat"] = coord.latitude
+        uploadValues["lng"] = coord.longitude
         
         ref.updateChildValues(uploadValues)
         
-        geoFire.setLocation(CLLocation(latitude: coord.latitude, longitude: coord.longitude), forKey: "\(count)")
+//        geoFire.setLocation(CLLocation(latitude: coord.latitude, longitude: coord.longitude), forKey: "\(count)")
         count = count + 1
       }
       
@@ -114,13 +118,13 @@ class Manager: NSObject {
   //write or Update customer details
   func updateUserDetail() {
       // [START update_document]
-      if let uuid = UIDevice.current.identifierForVendor?.uuidString {
+    if let uuid = UIDevice.current.identifierForVendor?.uuidString {
           let customerRef = db.collection("deviceList").document(uuid)
           customerRef.setData([
-            "battery": "0",
+            "battery": UIDevice.current.batteryLevel,
             "createdat": Date.timeIntervalSinceReferenceDate,
-            "id": "INDIA",
-            "name": "iOS"
+            "id": uuid,
+            "name": UIDevice.current.name
         ]) { err in
               if let err = err {
                   print("Error updating document: \(err)")

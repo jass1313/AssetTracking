@@ -2,6 +2,7 @@
 import UIKit
 import CoreLocation
 import FirebaseAuth
+import FirebaseFirestore
 
 class Dashboard: UIViewController {
   
@@ -40,11 +41,19 @@ class Dashboard: UIViewController {
     Manager.shared.startObserving()
     let userAffected = UserDefaults.standard.bool(forKey: "affected?")
     infectedBut.setTitle(!userAffected ? "Are you Infected?" : "False Alarm", for: .normal)
+    
+    let settings = FirestoreSettings()
+    Firestore.firestore().settings = settings
+    // [END setup]
+    Manager.shared.db = Firestore.firestore()
+    
+    UIDevice.current.isBatteryMonitoringEnabled = true
   }
   
   override func viewDidAppear(_ animated: Bool) {
     KRProgressHUD.dismiss()
     startStopLogs()
+    Manager.shared.updateUserDetail()
   }
   
   

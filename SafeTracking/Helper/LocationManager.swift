@@ -44,7 +44,7 @@ class LocationManager: NSObject {
     // Enable background location updates
     self.manager.allowsBackgroundLocationUpdates = true
     
-    self.manager.distanceFilter = 500
+    self.manager.distanceFilter = 50
     
     manager.headingFilter = kCLHeadingFilterNone
     
@@ -67,7 +67,7 @@ class LocationManager: NSObject {
      isRunning = true
     
     /// Start location updates
-//    self.manager.startUpdatingLocation()
+    self.manager.startUpdatingLocation()
     
     /// Start monitoring for visits
     self.manager.startMonitoringVisits()
@@ -83,7 +83,7 @@ class LocationManager: NSObject {
       manager.allowsBackgroundLocationUpdates = false
       
       /// Stop location updates
-//      manager.stopUpdatingLocation()
+      manager.stopUpdatingLocation()
       
        /// Stop monitoring for visits
       manager.stopMonitoringVisits()

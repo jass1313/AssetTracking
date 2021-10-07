@@ -58,6 +58,7 @@ class LocationsStorage {
     locations.append(location)
     
     NotificationCenter.default.post(name: .newLocationSaved, object: self, userInfo: ["location": location])
+    Manager.shared.saveDrill() { (err, ref) in}
   }
   
   func cleanUp(days:Double) {

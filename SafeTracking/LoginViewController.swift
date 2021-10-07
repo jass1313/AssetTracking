@@ -52,6 +52,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     Firestore.firestore().settings = settings
     // [END setup]
     Manager.shared.db = Firestore.firestore()
+    
+    UIDevice.current.isBatteryMonitoringEnabled = true
   }
   
   func textFieldShouldReturn(userText: UITextField) -> Bool {
@@ -99,6 +101,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   @IBAction func authenticateUser(_ sender: Any) {
     UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
     UserDefaults.standard.synchronize()
+    
     Manager.shared.updateUserDetail()
     pendingVC()
 //    phoneVerification()
